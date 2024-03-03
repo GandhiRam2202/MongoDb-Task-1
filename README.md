@@ -42,7 +42,7 @@ let Prices = db.products.distinct("product_price");<br>
 Prices.forEach(price => {<br>
 let product = db.products.find({ product_price: price }).sort({ _id: 1 }).skip(1); <br>
 product.forEach(doc => {<br>
-db.products.deleteOne({ _id: doc._id });<br>        
+db.products.deleteOne({ _id: doc._id });<br>
 });<br>
 });<br>
 
